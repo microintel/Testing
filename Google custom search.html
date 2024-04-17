@@ -1,0 +1,135 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Custom Search API Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #results {
+      margin-top: 20px;
+    }
+
+    .result-item {
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+    }
+
+    .result-title {
+      font-weight: bold;
+    }
+
+    .result-link {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .result-snippet {
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Google Custom Search API Example</h1>
+  <input type="text" id="searchQuery" placeholder="Enter your search query">
+  <button onclick="search()">Search</button>
+  <div id="results"></div>
+</div>
+
+<script>
+  function search() {
+    const apiKey = 'AIzaSyCjljTdkm93_IxRb65La6elm22di2_ymNM';
+    const searchEngineId = 'YOUR_SEARCH_ENGINE_ID';
+    const query = document.getElementById('searchQuery').value;
+    const url = `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${searchEngineId}&q=${query}`;
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        displayResults(data.items);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }
+
+  function displayResults(results) {
+    const resultsContainer = document.getElementById('results');
+    resultsContainer.innerHTML = '';
+
+    if (results.length === 0) {
+      resultsContainer.innerHTML = '<p>No results found.</p>';
+      return;
+    }
+
+    results.forEach(result => {
+      const resultItem = document.createElement('div');
+      resultItem.classList.add('result-item');
+
+      const title = document.createElement('div');
+      title.classList.add('result-title');
+      title.textContent = result.title;
+
+      const link = document.createElement('a');
+      link.classList.add('result-link');
+      link.href = result.link;
+      link.textContent = result.link;
+
+      const snippet = document.createElement('div');
+      snippet.classList.add('result-snippet');
+      snippet.textContent = result.snippet;
+
+      resultItem.appendChild(title);
+      resultItem.appendChild(link);
+      resultItem.appendChild(snippet);
+
+      resultsContainer.appendChild(resultItem);
+    });
+  }
+</script>
+
+</body>
+</html>

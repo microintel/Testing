@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Custom Search API Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+
+    .user-message {
+      background-color: #f2f2f2;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .assistant-message {
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Google Custom Search API Example</h1>
+  <div id="conversation"></div>
+  <input type="text" id="searchQuery" placeholder="Enter your search query">
+  <button onclick="search()">Send</button>
+</div>
+
+<script>
+  const conversationContainer = document.getElementById('conversation');
+
+  function search() {
+    const query = document.getElementById('searchQuery').value;
+    const userMessage = createUserMessage(query);
+    conversationContainer.appendChild(userMessage);
+    
+    const apiKey = 'AIzaSyCjljTdkm93_IxRb65La6elm22di2_ymNM';
+    const searchEngineId = '81b7e9838711e4bfe';
+    
+    const url = `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${searchEngineId}&q=${query}`;
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        const answer = getAnswer(data.items);
+        const assistantMessage = createAssistantMessage(answer);
+        conversationContainer.appendChild(assistantMessage);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }
+
+  function createUserMessage(text) {
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('user-message');
+    messageElement.textContent = `User: ${text}`;
+    return messageElement;
+  }
+
+  function createAssistantMessage(text) {
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('assistant-message');
+    messageElement.textContent = `Assistant: ${text}`;
+    return messageElement;
+  }
+
+  function getAnswer(results) {
+    if (results.length === 0) {
+      return 'No results found.';
+    }
+
+    const answerResult = results.find(result => result.pagemap && result.pagemap.metatags && result.pagemap.metatags.length > 0 && result.pagemap.metatags[0]['og:description']);
+
+    if (answerResult) {
+      return answerResult.pagemap.metatags[0]['og:description'];
+    } else {
+      return 'No concise answer found.';
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voice Command</title>
+</head>
+<body>
+
+<button id="start-listening">Start Listening</button>
+
+<script>
+// Check if browser supports speech recognition
+if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+  const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+  const startButton = document.getElementById('start-listening');
+
+  // Event listener to start recognition
+  startButton.addEventListener('click', () => {
+    startButton.textContent = 'Listening...';
+    recognition.start();
+  });
+
+  // Event listener for when speech is recognized
+  recognition.onresult = (event) => {
+    const command = event.results[0][0].transcript.trim().toLowerCase();
+    console.log('Command:', command);
+    
+    // Check for specific commands
+    if (command === 'open github.com') {
+      window.open('https://github.com', '_blank');
+    }
+
+    startButton.textContent = 'Start Listening';
+  };
+
+  // Error handling
+  recognition.onerror = (event) => {
+    console.error('Speech recognition error:', event.error);
+    startButton.textContent = 'Start Listening';
+  };
+} else {
+  console.error('Speech recognition not supported');
+  alert('Speech recognition not supported in this browser');
+}
+</script>
+
+</body>
+</html>
