@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!--                                         
+Ｄｅａｒ ｈａｃｋｉｎｇ ｍｉｎｄ，
+ｐｌｅａｓｅ ｂｅ ａｗａｒｅ ｔｈａｔ
+ａｃｃｅｓｓｉｎｇ ｔｈｅ ❤️ ｏｆ ｔｈｉｓ ｓｉｔｅ＇ｓ ｃｏｄｅ
+ｉｓ ｎｏｔ ｐｏｓｓｉｂｌe
+ｂｅｃａｕｓｅ ｉｔ ｈａｓ ｂｅｅｎ ｄｅｖｅｌｏｐｅｄ ｂｙ Ｍｉｃｒｏｉｎｔｅｌ™.
+
+-->
+<html>
+<head>
+<title>Result</title>
+<style type="text/css">
+
+body{
+        background-color: black;
+        text-align: left;
+        color: aliceblue;
+        font-family: sans-serif;
+        font-size: small;
+    }
+    input[type="text"]{
+        border-radius: 12px;
+    }
+    table{
+        border: 1px;
+        background-color: aliceblue;
+        border-collapse: collapse;
+        border-color: #090100;
+    }
+    th{
+        background-color: rgb(39, 39, 38);
+        height: 40px;
+        width: 40px;
+    }
+    td{
+        color: black;
+    }
+    
+    #dcetf{
+    background-color:transparent;
+    display:flex;
+    flex-direction:column;
+    justify-content:left;
+    align-items:center;
+    width:70vw;
+    height:45vh;
+    
+    }
+    
+    form{
+    height:100%;
+    width:100%;
+    background-color:transparent;
+    display:flex;
+    justify-content:space-between;
+    
+    }
+    
+    #duname,#dreg,#dcetreg,#drank,#dmark{
+    padding:5px;
+    
+    border:2px solid white;
+    border-radius:12px;
+    }
+    
+   
+    
+    
+    fieldset{
+    border:2px solid rgba(250, 162, 0, 0.966);
+    border-radius:5px;
+    }
+    
+    #dsub{
+    padding:4px;
+    border:2px solid transparent;
+    background-color:orange;
+    border-radius:12px;
+    }
+
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="result.css">
+</head>
+<body>
+<img src="https://4.bp.blogspot.com/-sJv3pQOUHks/TiWruyLxAnI/AAAAAAAAAGs/wQ5hw_mPY7w/s1600/karnataka_govt_logo.png"  height="100PX" width="100PX">
+<h1><strong>BOARD OF TECHNICAL EDUCATION</strong></h1>
+<h2><strong>DEPARTMENT OF TECHNICAL EDUCATION, KARNATAKA</strong></h2>
+<p style="background-color: rgb(243, 229, 167); color: aliceblue;">_</p>
+<div>
+    <label for="a"><strong>Regno:</strong></label>
+    <input id="i" type="text" placeholder="ENTER REG NUM IN CAPS" style="border: hidden;">
+    <label for="b"><strong>Semester:</strong></label>
+    <select id="se" style="width:45px;border-radius:12px;">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">DCET 2024</option>
+    </select>
+    <P>  </P>
+    <button onclick="sem()" style="background-color: rgba(250, 162, 0, 0.966); border: hidden; border-radius: 15px;">Get Result</button>
+</div>
+<p id="Table">
+
+
+<a id="ta">
+</p>
+<p id="get"></p>
+<p id="jhg"></p>
+<p id="ghj"></p>
+<p id="prix"></p>
+<p id="dev"></p>
+<script src="/storage/emulated/0/Download/script.js">
+</script>
+<script type="text/javascript">
+let mailR="";
+function dcet(){
+    
+    let formS=`
+               <center>
+               <div id="dcetf">
+               
+               <form  onsubmit="dcetmr()">
+               
+               <fieldset>
+               <legend><b><font> MicroResult </font></b> Data Feed Form</legend>
+               <br>
+               <input id="duname" type="text" placeholder="enter u r name" required>
+               <br><br>
+               <input id="dreg" type="text" placeholder="enter u r Diploma reg no" required>
+               <br><br>
+               <input id="dcetreg" type="text" placeholder="enter u r dcet reg no" required>
+               <br><br>
+               <input id="drank" type="text" placeholder="enter u r dcet rank" required>
+               <br><br>
+               <input id="dmark" type="text" placeholder="enter u r dcet marks" required>
+               <br><br>
+               <button id="dsub" type="submit">Send Gmail</button>
+               
+               </fieldset>
+               
+               </form>
+               </div>
+               </center>
+                           `;
+    document.getElementById("Table").innerHTML=formS;
+    
+    
+    let toMa = "recipient@example.com";
+    let toM = "Microintel";
+    let uN = document.getElementById("duname").value;
+    let uDRN = document.getElementById("dreg").value;;
+    let uDCETN =document.getElementById("dcetreg").value;;
+    let uDR = document.getElementById("drank").value;;
+    let uM = document.getElementById("dmark").value;;
+
+    let subject = "DCET Result Data Feed";
+    let body = "Hey " + toM + ",\n\n" +
+               "I am " + uN +","+ "\n\n" +
+               "I hope this email finds you well.\n\n" +
+               "I would like to submit my results for inclusion in the micro results:\n\n" +
+               "Name: " + uN + "\n" +
+               "Diploma Reg No: " + uDRN + "\n" +
+               "DCET Reg No: " + uDCETN + "\n" +
+               "Rank: " + uDR + "\n" +
+               "Marks: " + uM + "\n\n" +
+               "Thank you...";
+
+    let s = encodeURIComponent(subject);
+    let b = encodeURIComponent(body);
+
+    let mailData= "mailto:" + toMa + "?subject=" + s + "&body=" + b;
+
+    mailR=mailData;
+    
+}
+function dcetmr(){
+location.href=mailR;
+}
+</script>
+<script src="maximux.js"></script>
+</body>
+</html>
