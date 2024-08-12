@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<head>
+<style type="text/css">
+
+/*
+.ul1{
+    display: inline-flex;
+    color:white;
+    list-style-type: none;
+    font-size: large;
+     gap: 10%;
+     margin-left: -10%;
+
+}
+li:hover{
+    text-decoration: none;
+    border: none;
+    border-bottom: 2px solid red;
+    color: white;
+
+    
+    
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-family: monospace;
+    cursor: pointer;
+    text-align: center;
+}
+#a4{
+    float: right;
+}
+
+.header{
+    background-color: black;
+    color:white;
+    width: 100%;
+    margin-top: 0px;
+    position:absolute;
+    margin-left: 0px;
+    
+    
+}
+#work1{
+    position: absolute;
+    margin-top: 15%;
+    text-align: right;
+    font-size: larger;
+    
+}
+.cd1{
+    margin: 5px;
+    float: left;
+    width: 200px;
+}
+.cd1 a{
+    color: rgb(255, 255, 255);
+
+}
+.cd1 .link{
+    background-color: red;
+    border-radius: 5px;
+
+}
+#c1{
+}
+
+*/
+
+body {
+margin: 0;
+        }
+.header {
+position:fixed;
+width:100%;
+  padding: 10px;
+  padding-bottom:0px;
+  background-color: black;
+  text-align: center;
+        }
+        .header img{
+        width:200px;
+        
+        }
+
+.ul1 {
+            display: flex;
+            color: white;
+            list-style-type: none;
+            padding: 10px;
+            justify-content: space-between;
+            margin: 0px;
+            padding-left: 10px;
+            padding-right:10px;
+            pading-top:10px;
+            padding-bottom:0px;
+        }
+
+
+a {
+  text-decoration: none;
+ color: white;
+        }
+
+button {
+            color: white;
+            margin:0px;
+            font-size:0.8em;
+            background-color: black;
+            padding:10px 10px 10px 10px;
+            border:0px;
+            transition: 0.4s;
+            
+        }
+        
+button:nth-child(5){
+
+border-bottom:5px solid red;
+padding-top:10px;
+font-size:1em;
+padding-bottom:2px;
+}
+
+button:hover {
+border-bottom: 5px solid red;
+padding-top:15px;
+font-size:1em;
+padding-bottom:2px;
+        }
+
+
+
+.aboutMI p,.assestMI p{
+padding:8px;
+text-align:left;
+margin:5px;
+}
+.abas{
+
+margin-left:15px;
+margin-right:15px;
+margin-top:4px;
+padding:5px;
+padding-top:34%;
+}
+
+.aboutMI, .assestMI {
+  background:white;
+border-radius: 15px;
+box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) inset;
+  margin-bottom: 40px;
+   padding: 10px;
+   overflow: hidden;
+        }
+        .aboutMI h2, .assestMI h2 {
+  font-size: 2.5em;
+ color: #333;
+margin-bottom: 20px;
+letter-spacing: 1px;
+        }
+        .aboutMI p {
+font-size: 1.1em;
+line-height: 1.8;
+color:grey;
+margin: 10px 0;
+        }
+        .assestMI p {
+   font-size: 1.1em;
+color: grey;
+ margin: 5px 0;
+        }
+            .aboutMI h2, .assestMI h2 {
+        font-size: 2em;
+            }
+            .assestMI img {
+         width: 100px;
+                height: 150px;
+            }
+    .aboutMI p, .assestMI p {
+            font-size: 0.95em;
+            }
+            
+            
+        
+        @media (min-width: 768px) {
+        .ul1{
+        
+        justify-content:center;
+        }
+        .abas{
+        padding-top:14%;
+        display:flex;
+        flex-direction:row;
+        gap:20px;
+        
+        }
+        
+        .aboutMI, .assestMI{
+        
+        width:50vw;
+        }
+        }
+</style>
+    <title>Microintel</title>
+    <link rel="stylesheet" href="index.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <body>
+        <div class="header">
+        <center>
+        <img src="https://raw.githubusercontent.com/microintel/endgram/main/photo/microintel%20marvel.jpg"><br>
+        <br>
+        <div class="ul1">
+            <button id="u1"><a onclick="window.location.href='home.html'" target="workspace">Home</a></button>
+            <button  id="u2"><a onclick="window.location.href='projects.html'">Projects</a></button>
+            <button id="u5"><a onclick="window.location.href='news.html'">News</a></button>
+            <button id="u3"><a onclick="window.location.href='contactus.html'">contacts</a></button>
+            <button id="u4" ><a >About</a></button>
+            
+        </div>
+        </center>
+        </div>
+        <br>
+        <br>
+        <center>
+        <div id="work1">
+        
+        </div>
+        
+        
+       
+       
+
+   <script>
+   
+   
+   
+   
+
+   function about(){
+   document.getElementById("work1").style.display="block";
+   document.getElementById('work1').innerHTML=`
+   <div class="abas">
+   <div class="aboutMI">
+   <center><h2>About MicroIntel</h2></center>
+   <center>
+   <p>Microintel is an Multinational computer software company headquartered in , Pandora. & founded in 2023 by Microintel team. </p>
+   <p>The term "microintel" is combination of "micro" and "intel", which refers to intelligence. In this sense, "microintel" could be used to describe a small amount of intelligence or knowledge.</p>
+   <p>It develops software for web development and more.
+   Some of its most popular products include Vision, Result Portal, Multiverse,Microdisk....</p>
+   
+   <p>Microintel's products are used by number of people around the world, from creative professionals to students to everyday users. The company's software has been used to create some of the most iconic documents in history, including the Dtech CMNR Result-Portal , Vision and more.</p>
+   </center>
+   </div>
+   <div class="assestMI">
+   <center><h2>Assets Of Microintel</h2></center>
+   <center><p> Ms, Darling, CEO of the Microintel</p>
+   <p> Mr, Nikil, BM-Founder-Coder-Shareholder of Microintel</p>
+   <p> Mr, Vignesh, Founder-Coder-Shareholder of Microintel</p>
+   <p> Mr, Raghavendra, QA Manager & Distributor of Microintel</p>
+   <p> Mr, Vinay, QA Tester & Distributor of Microintel</p>
+   <p> Mr, Amith, Ideator, Designer of Microintel</p>
+   <p>Mr, Dhanush, tester of Microintel</p>
+   <p>Mr, Pranav, primary investor & Designer of Microintel</p>
+   </center>
+   </div>
+   </div>`;
+   }
+   
+   about();
+   </script>
+    </body>
+</head>
