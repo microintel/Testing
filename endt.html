@@ -3,19 +3,18 @@
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1.0" /> 
   <style type="text/css">
-  body{
-  background-color:black;
-  padding:30px;
+  body {
+    background-color: black;
+    padding-top:50%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
   }
-  
-  
- 
-  .bot{
-  margin-top:100%;
-  }
-  
-.loader {
-margin:0px;
+
+  .loader {
+    margin: 0px;
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -24,9 +23,10 @@ margin:0px;
     background: linear-gradient(0deg, rgba(255, 61, 0, 0.2) 35%, #d47d61 70%);
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
-    }
-    .loader::after {
-    margin:0px;
+  }
+
+  .loader::after {
+    margin: 0px;
     content: '';  
     box-sizing: border-box;
     position: absolute;
@@ -36,50 +36,53 @@ margin:0px;
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background:black;
-    }
-    @keyframes rotation {
+    background: black;
+  }
+
+  @keyframes rotation {
     0% { transform: rotate(0deg) }
     100% { transform: rotate(360deg)}
-    } 
-    
-    h1 img, .bot img {
+  }
+
+  h1 img, .bot img {
     width: 200px;
     height: 80px;
-    margin:0px;
-    }
+    margin: 0px;
+  }
+
+  .bot {
+    position:fixed;
+    bottom: 30px;
+    left: 50%;
+    top:80%;
+    transform: translateX(-50%);
+    z-index:1;
+  }
   </style>
 
 </head>
 
-
 <body>
-<center>
-   <div class="top">
-  <h1><img src="https://raw.githubusercontent.com/microintel/endgram/main/photo/endgram%20gradient%202-min.png"></h1>
- <center> <span class="loader"></span></center>
+  <center>
+    <div class="top">
+      <h1><img src="https://raw.githubusercontent.com/microintel/endgram/main/photo/endgram%20gradient%202-min.png"></h1>
+      <center> <span class="loader"></span></center>
+    </div>
    
-   </div>
-   
-   
-   
-   <div class="bot">
-   
-   <img src="https://raw.githubusercontent.com/microintel/endgram/main/photo/from%20microintel%20endgame%206-min.png">
-   
-   </div>
+    <div class="bot">
+      <img src="https://raw.githubusercontent.com/microintel/endgram/main/photo/from%20microintel%20endgame%206-min.png">
+    </div>
+  </center>
 
-
-</center>
-<script>
-/*
- setTimeout(red, 2300);
- 
- function red() {
- location.href="home.html";
- }
- */
- </script>
+  <script>
+  /*
+   setTimeout(red, 2300);
+   
+   function red() {
+   location.href="home.html";
+   }
+   */
+  </script>
 
 </body>
 </html>
