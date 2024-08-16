@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<head>
+    <title>Microintel</title>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
+       
+       <style type="text/css">
+       
+       body{
+       background-color:white;
+       font-family: monospace;
+       color: black;
+       text-align: center;
+       margin-top: 0px;
+       margin-left: 0px;
+       
+       
+       }
+       
+       @media (min-width:700px){
+       .ul1{
+       display: inline-flex;
+       justify-content: center;
+       align-items: center;
+       color:white;
+       list-style-type: none;
+       font-size: large;
+       gap: 10%;
+       
+       }
+       
+       
+       li:hover{
+       text-decoration: none;
+       border: none;
+       border-bottom: 2px solid red;
+       color: white;
+       
+       }
+       
+       a{
+       text-decoration: none;
+       color: white;
+       font-family: monospace;
+       cursor: pointer;
+       text-align: center;
+       }
+       
+      
+       .header{
+       background-color: black;
+       color:white;
+       width: 100%;
+       margin-top: 0px;
+       position:absolute;
+       margin-left: 0px;
+       
+       
+       }
+       .header img{
+       margin-top:2%;
+       width:20%;
+       height:30%;
+       
+       }
+       
+       .cd1{
+       margin: 5px;
+       display: inline-flex;
+       width: 300px;
+       height:250px;
+       justify-items: center;
+       align-items: center;
+       border-radius: 10px;
+       overflow: hidden;
+       box-shadow: 3px 5px 8px black;
+       
+       
+       }
+       .cd1 a{
+       color: rgb(0, 0, 0);
+       
+       }
+       .cd1 .link{
+       background-color: aliceblue;
+       
+       }
+       
+       #main1{
+       margin-top: 15%;
+       }
+      
+      
+      
+       @keyframes anime1 {
+       50%{
+       box-shadow: 5px 10px 18px red;
+       }  
+       }  
+       
+       
+       }
+       
+       
+       
+       @media (max-width:600px){
+
+        body{
+        background-color:white;
+        font-family: monospace;
+        color: black;
+        text-align: center;
+        margin:0px;
+        padding:0px;
+        
+        
+        }
+        
+        .header{
+        background-color:black;
+        color:white;
+        width:100%;
+        position:absolute;
+        margin: 0px;
+        padding:0px;
+        
+        
+        }
+        .header img{
+        margin-top:4%;
+        width:200px;
+        }
+        
+        .ul1{
+        
+        display:flex;
+        justify-content:space-around;
+        margin:0px;
+        padding:10px;
+        color:white;
+        list-style-type: none;
+        font-size: large;
+        }
+        li{
+        
+        margin:0px;
+        padding:0px;
+        }
+        
+        a{
+        margin:0px;
+        padding:0px;
+        text-decoration: none;
+        color: white;
+        font-family: monospace;
+        cursor: pointer;
+        text-align: center;
+        
+        }
+
+         #main1{
+         margin-top:35%;
+         }
+         
+         .cd1{
+         margin: 5px;
+         display: inline-flex;
+         width: 300px;
+         height:250px;
+         justify-items: center;
+         align-items: center;
+         border-radius: 10px;
+         overflow: hidden;
+         box-shadow: 3px 5px 8px black;
+         
+         
+         }
+         .cd1 a{
+         color: rgb(0, 0, 0);
+         
+         }
+         .cd1 .link{
+         background-color: aliceblue;
+         
+         }
+
+       
+       }
+       
+       
+       
+       </style>
+    <body>
+        <div class="header">
+        <img src="https://raw.githubusercontent.com/microintel/endgram/main/photo/microintel%20marvel.jpg"><br><br>
+        <ul class="ul1">
+            <li id="u1"><a href="index.html" >Home</a></li>
+            <li  id="u2"><a href="project.html">Projects</a></li>
+            <li id="u5"><a href="news.html">News</a></li>
+            <li id="u3"><a href="contact.html">contacts</a></li>
+            <li id="u4" ><a href="about.html">About</a></li>
+            
+        </ul>
+        </div>
+        <br>
+            <div id="main1">
+                <div class="cd1">
+                    <a href="https://microintel.github.io/cie/" >
+                        <img id="img" class="pimg" src="h2.jpg" width="300px" height="200px" >
+                        <div class="link">Diploma CIE Book Evaluator</div>
+                    </a>
+                </div>
+                <div class="cd1">
+                    <a href="https://microintel.github.io/cie/" >
+                        <img id="img" class="pimg" src="h2.jpg" width="300px" height="200px" >
+                        <div class="link">Diploma CIE Book Evaluator</div>
+                    </a>
+                </div>
+                <div class="cd1">
+                    <a href="https://microintel.github.io/cie/" >
+                        <img id="img" class="pimg" src="h2.jpg" width="300px" height="200px" >
+                        <div class="link">Diploma CIE Book Evaluator</div>
+                    </a>
+                </div>
+                <div class="cd1">
+                    <a href="https://microintel.github.io/cie/" >
+                        <img id="img" class="pimg" src="h2.jpg" width="300px" height="200px" >
+                        <div class="link">Diploma CIE Book Evaluator</div>
+                    </a>
+                </div>
+            </div>
+       
+       
+
+   <script src="index.js">
+   
+   </script>
+
+    <script>
+   
+   async function myproject() {
+   let fet = await fetch("https://microintel.github.io/microintel/project.json");
+   let xon = await fet.json();
+   let arda = ``;
+   for (let x in xon) {
+   let logo = xon[x]["projectlogo"];
+   let redu = xon[x]["redurl"];
+   let apro = xon[x]["aboutproject"];
+   let sda = `
+   <div class="cd1">
+   <a href="${redu}" >
+   <img id="img" class="pimg" src="${logo}" width="300px" height="200px">
+   <div class="link">${apro}</div>
+   </a>
+   </div>
+   `;
+   arda += sda;
+   }
+   document.getElementById('main1').innerHTML = arda;
+   }
+   
+   myproject();
+   
+    </script>
+    </body>
+</head>
