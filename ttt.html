@@ -1,0 +1,115 @@
+<div class="opp">
+   <div>
+   <button onclick="xx('marvel')">Marvel</button>
+   <button onclick="xx('stock market')">Stocks</button>
+   <button onclick="xx('python')">Python</button>
+   <button onclick="xx('avatar the way of water')">Avatar</button>
+   </div>
+   <div class="inb">
+   
+   <input id="inp" placeholder="what about news do u want read.">
+   
+   
+   
+   <button onclick="xxx('inp')">Search</button>
+   </div><br>
+   <div>
+   <br>
+   <center>
+   <span id="load"></span>
+   
+   <div id="pare" class="par">
+   <center>
+   <div class="child">
+   <font>${title }</font>
+   <img src="${nimg}" alt="${nt}" loading="lazy">
+   <font>${summary}</font><br>
+   <font class="date">${date}</font>
+   <font><a href="${nl}">Read More...</a></font>
+   
+   </div>
+   
+   <div class="child">
+   <font>${title }</font>
+   <img src="${nimg}" alt="${nt}" loading="lazy">
+   <font>${summary}</font><br>
+   <font class="date">${date}</font>
+   <font><a href="${nl}">Read More...</a></font>
+   
+   </div>
+   
+   <div class="child">
+   <font>${title }</font>
+   <img src="${nimg}" alt="${nt}" loading="lazy">
+   <font>${summary}</font><br>
+   <font class="date">${date}</font>
+   <font><a href="${nl}">Read More...</a></font>
+   
+   </div>
+   
+   <div class="child">
+   <font>${title }</font>
+   <img src="${nimg}" alt="${nt}" loading="lazy">
+   <font>${summary}</font><br>
+   <font class="date">${date}</font>
+   <font><a href="${nl}">Read More...</a></font>
+   
+   </div>
+   
+   <div class="child">
+   <font>${title }</font>
+   <img src="${nimg}" alt="${nt}" loading="lazy">
+   <font>${summary}</font><br>
+   <font class="date">${date}</font>
+   <font><a href="${nl}">Read More...</a></font>
+   
+   </div>
+   
+   </div>
+   </center>
+   
+   
+   <script type="text/javascript">
+   
+   async function xx(qq) {
+   document.getElementById('load').style.display="block";
+   document.getElementById('pare').innerHTML="";
+   let wq = qq;
+   let str = `https://newsdata.io/api/1/latest?apikey=pub_50746bae58827b7fc68ea59748a56c0b1cecb&q=${wq}`;
+   let f = await fetch(str);
+   let c = await f.json();
+   let rl = c["results"];
+   
+   for (let x of rl) {
+   let nt = x["title"];
+   let nl = x["link"];
+   let nd = x["description"];
+   let npd = x["pubDate"];
+   let nimg = x["image_url"];
+   let nll = x["language"];
+   document.getElementById('load').style.display="none";
+   if (nll === "english") {
+   
+   let newe = document.createElement("div");
+   newe.loading = "lazy";
+   newe.className = "child";
+   newe.innerHTML = `
+   <font>${nt}</font>
+   <img src="${nimg}" alt="${nt}" loading="lazy">
+   <font>${nd}</font><br>
+   <font class="date">${npd}</font>
+   <font><a href="${nl}" target="_blank">Read More...</a></font>
+   `;
+   document.getElementById('pare').appendChild(newe);
+   }
+   
+   
+   }
+   }
+   
+   
+   function xxx(x) {
+   xx(document.getElementById(x).value);
+   }
+   
+   </script>
