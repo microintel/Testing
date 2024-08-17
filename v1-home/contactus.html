@@ -30,7 +30,7 @@ padding-top:46%;
     background-color: black; 
     height: 50px;
      color: aliceblue;
-     font-size: larger;
+     font-size:medium;
      display:flex;
      flex-direction:column;
      justify-content:center;
@@ -42,9 +42,6 @@ padding-top:46%;
      box-shadow: 3px 5px 8px black;
 }
 
-.ct{
-margin-top:30%;
-}
 
 
 
@@ -68,9 +65,6 @@ margin-top:30%;
         padding-top:14%;
         
         }
-            .ct{
-        margin-top:14%;
-            }
         .ctu1{
         
         display:flex;
@@ -94,9 +88,9 @@ margin-top:30%;
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
     <body>
-        <div class="header">
+        <div id="head" class="header">
         <center>
-        <img src="https://raw.githubusercontent.com/microintel/endgram/main/photo/microintel%20marvel.jpg">
+        <img id="im" src="https://raw.githubusercontent.com/microintel/endgram/main/photo/microintel%20marvel.jpg">
         <br>
         <div class="ul1">
             <button id="u1"><a onclick="window.location.href='home.html'" target="workspace">Home</a></button>
@@ -121,15 +115,7 @@ margin-top:30%;
         <br>
         <center>
         <br>
-        <div class="ct">
-        
-        <div class="ctu1">
-        <a href="mailto:microfly2410@gmail.com?body=Hello Microintel support team" style="color: black;"><img class="cntus" src="https://raw.githubusercontent.com/microintel/endgram/main/photo/gmail%20logo.png" style="height: 35px; width: 35px;"></a>
-        <a href="https://instagram.com/micro_intel/" style="color: black;"><img class="cntus" src="https://raw.githubusercontent.com/microintel/endgram/main/photo/instagram%20logo.png" style="height: 42px; width: 42px;"></a>
-        <a href="https://github.com/microintel/" style="color: black;"><img class="cntus" src="https://raw.githubusercontent.com/microintel/endgram/main/photo/github%20black%20logo.png" style="height: 35px; width: 35px;"></a>
-        <a href="https://x.com/micro_intel/" style="color: black;"><img class="cntus" src="https://raw.githubusercontent.com/microintel/endgram/main/photo/twitter%20x%20logo%20black.png" style="height: 35px; width: 35px;"></a>
-        </div>
-        
+        <div id="ctt" class="ct">
         
         <br>
         <div  class="ab2" style="margin: 10px; " >
@@ -151,21 +137,24 @@ margin-top:30%;
         <a><img src="https://i.pinimg.com/736x/b5/1e/e6/b51ee666503f24461bf63233d2dcc82b.jpg" height="200px" width="150px" alt="">
         <div class="ab1" ><b>AMITH</b></div></a>
         
-        
-        
+        </div>
+        <br><br>
+        <div  class="ctu1">
+        <a href="mailto:microfly2410@gmail.com?body=Hello Microintel support team" style="color: black;"><img class="cntus" src="https://raw.githubusercontent.com/microintel/endgram/main/photo/gmail%20logo.png" style="height: 35px; width: 35px;"></a>
+        <a href="https://instagram.com/micro_intel/" style="color: black;"><img class="cntus" src="https://raw.githubusercontent.com/microintel/endgram/main/photo/instagram%20logo.png" style="height: 42px; width: 42px;"></a>
+        <a href="https://github.com/microintel/" style="color: black;"><img class="cntus" src="https://raw.githubusercontent.com/microintel/endgram/main/photo/github%20black%20logo.png" style="height: 35px; width: 35px;"></a>
+        <a href="https://x.com/micro_intel/" style="color: black;"><img class="cntus" src="https://raw.githubusercontent.com/microintel/endgram/main/photo/twitter%20x%20logo%20black.png" style="height: 35px; width: 35px;"></a>
         </div>
         
-        
-        
         </div>
-        
-       
-       
 
    <script>
    
-   
-   
+   let c=document.getElementById('head').offsetHeight;
+  
+   c=c+5;
+   c=c+'px';
+  document.getElementById('ctt').style.marginTop=c;
    function myfun(a){
    if (a==1){
    document.getElementById('work1').innerHTML="gus";
