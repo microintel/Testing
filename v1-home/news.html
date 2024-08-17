@@ -4,6 +4,54 @@
 <link rel="stylesheet" href="commonCss.css">
 <style type="text/css">
 
+body {
+margin: 0;
+        }
+.header {
+position:fixed;
+width:100%;
+  padding: 10px;
+  padding-bottom:0px;
+  background-color: black;
+  text-align: center;
+  z-index:1;
+        }
+        .header img{
+        width:200px;
+        
+        }
+
+.ul1 {
+            display: flex;
+            color: white;
+            list-style-type: none;
+            justify-content: space-between;
+            margin: 0px;
+            padding-left: 10px;
+            padding-right:15px;
+            pading-top:10px;
+            padding-bottom:0px;
+        }
+
+
+a {
+  text-decoration: none;
+ color: white;
+        }
+
+button {
+            color: white;
+            margin:0px;
+            font-size:0.8em;
+            background-color: black;
+            padding:10px 10px 10px 10px;
+            border:0px;
+            
+        }
+        
+
+
+
 button:nth-child(3){
 
 border-bottom:3px solid red;
@@ -83,7 +131,6 @@ min-width:630px;
 }
 
 .opp{
-padding-top:20vh;
 display:flex;
 flex-direction:column;
 justify-content:space-around;
@@ -143,10 +190,6 @@ border:1px solid black;
     .child{
     margin-right:15vw;
     }
-    .opp{
-    
-    paddin-top:25vh;
-    }
     .ul1{
     
     justify-content:center;
@@ -163,9 +206,6 @@ border:1px solid black;
     padding-top:14%;
     
     }
-    .ct{
-    margin-top:15%;
-    }
     }
     
     
@@ -173,7 +213,7 @@ border:1px solid black;
 </head>
 <body>
 
-<div class="header">
+<div id="head" class="header">
         <center>
         <img src="https://raw.githubusercontent.com/microintel/endgram/main/photo/microintel%20marvel.jpg">
         <br>
@@ -189,7 +229,7 @@ border:1px solid black;
         </div>
 
 
-<div class="opp">
+<div id="op" class="opp">
 <div>
 <button onclick="xx('marvel')">Marvel</button>
 <button onclick="xx('stock market')">Stocks</button>
@@ -216,6 +256,14 @@ border:1px solid black;
 
 
 <script type="text/javascript">
+
+let c=document.getElementById('head').offsetHeight;
+  alert(c);
+   c=c+50;
+   c=c+'px';
+   alert(c);
+  document.getElementById('op').style.paddingTop=c;
+
 
 async function xx(qq) {
 document.getElementById('load').style.display="block";
